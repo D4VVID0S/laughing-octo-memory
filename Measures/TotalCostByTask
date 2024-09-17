@@ -1,0 +1,10 @@
+-- First create the TotalCostByTask measure, then the RankByCurrency
+
+TotalCostByTask = 
+CALCULATE (
+    SUM('Time'[Koszt za realizacje]),
+    ALLEXCEPT('Time', 'Time'[ID zadania])
+)
+
+RankByCurrency = 
+RANKX(ALL('Time'), [TotalCostByTask], , DESC, Skip)
