@@ -1,8 +1,0 @@
-Estymacja card (hh:mm:ss) = 
-VAR TotalSeconds = SUMX('Summary Time and Estimate', 'Summary Time and Estimate'[Estymacja Duration]) * 86400  -- Convert days to seconds
-VAR Hours = INT(TotalSeconds / 3600)
-VAR Minutes = INT(MOD(TotalSeconds, 3600) / 60)
--- VAR Seconds = MOD(TotalSeconds, 60)
-RETURN
-FORMAT(Hours, "00") & ":" & FORMAT(Minutes, "00") -- & ":" & FORMAT(Seconds, "00")
-

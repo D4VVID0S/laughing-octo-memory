@@ -5,4 +5,3 @@ VAR Minutes = INT(MOD(TotalSeconds, 3600) / 60)
 -- VAR Seconds = MOD(TotalSeconds, 60)
 RETURN
 FORMAT(Hours, "00") & ":" & FORMAT(Minutes, "00") -- & ":" & FORMAT(Seconds, "00")
-
